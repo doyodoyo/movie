@@ -1,6 +1,11 @@
 import glob
 
 from moviepy.editor import *
+import os
+if os.name=='nt':
+    os.environ["IMAGEIO_FFMPEG_EXE"] = "/usr/bin/ffmpeg"
+elif os.name=='posix':
+    os.environ["IMAGEIO_FFMPEG_EXE"] = "/opt/homebrew/Cellar/ffmpeg/5.1/bin/ffmpeg"
 
 
 files = glob.glob("./srcmovie/*")
