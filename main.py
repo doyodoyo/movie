@@ -12,7 +12,7 @@ files = glob.glob("./srcmovie/*")
 videoclips=[]
 audioclips=[]
 for file in files:
-    videoclips.append(VideoFileClip(file).resize(0.4))
+    videoclips.append(VideoFileClip(file).resize(width=480))
     audioclips.append(AudioFileClip(file))
 
 save_path = "newmovie/movie.mp4"#保存先のpath
